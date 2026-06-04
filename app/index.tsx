@@ -57,11 +57,11 @@ export default function WelcomeScreen() {
     >
       <View style={styles.overlay}>
         <View>
-          <Text style={styles.title}>Capture.</Text>
+          <Text style={styles.title}>Explora.</Text>
           <Text style={[styles.title, styles.accent]}>
-            Explore.
+            Captura.
           </Text>
-          <Text style={styles.title}>Remember.</Text>
+          <Text style={styles.title}>Recuerda.</Text>
 
           <Text style={styles.subtitle}>
             Guarda fotografías junto con su ubicación
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.overlay,
     paddingHorizontal: 24,
     paddingTop: 70,
-    paddingBottom: 36,
+    paddingBottom: 60,
     justifyContent: "space-between",
   },
 
