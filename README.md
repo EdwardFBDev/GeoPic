@@ -1,50 +1,177 @@
-# Welcome to your Expo app 👋
+# GeoPic
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+GeoPic is a mobile application developed as part of **Laboratory 2: Hardware and Sensor Integration** for the Mobile Application Development course.
 
-## Get started
+The application allows users to capture photos using their device's camera and automatically register the geographic coordinates (latitude and longitude) obtained through GPS. Each photo can include a custom description and can later be viewed from a visual gallery.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## Project Objective
 
-2. Start the app
+The purpose of this project is to demonstrate the integration of native mobile device resources using Expo and React Native, including:
 
-   ```bash
-   npx expo start
-   ```
+* Device camera access
+* GPS location services
+* Permission management
+* Screen navigation
+* Global state management using Context API
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Features
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+###  Photo Capture
 
-## Get a fresh project
+* Access to the device camera
+* Photo preview before saving
+* Automatic GPS coordinate capture when taking a photo
+* Custom description field
 
-When you're ready, run:
+###  Geographic Logging
 
-```bash
-npm run reset-project
+Each entry stores:
+
+* Photo
+* Description
+* Latitude
+* Longitude
+* Creation date
+
+###  Gallery View
+
+* Display all saved photos
+* Grid-based layout for an improved visual experience
+* Access to detailed information for each entry
+
+###  Detail View
+
+When a photo is selected from the gallery, users can view:
+
+* Full-size image
+* Description
+* Geographic coordinates
+* Entry creation date
+
+###  Permission Handling
+
+The application requests permissions for:
+
+* Camera access
+* GPS location access
+
+It also handles scenarios where the user denies one or more required permissions without causing the application to crash.
+
+---
+
+## Project Architecture
+
+This project was developed following software engineering best practices:
+
+* **SRP (Single Responsibility Principle)**
+* **DRY (Don't Repeat Yourself)**
+* **KISS (Keep It Simple, Stupid)**
+* **High Cohesion**
+* **Low Coupling**
+
+### Project Structure
+
+```text
+GeoPic
+│
+├── app
+│   ├── _layout.tsx
+│   ├── index.tsx
+│   ├── entry
+│   │   └── [id].tsx
+│   └── (tabs)
+│       ├── _layout.tsx
+│       ├── capture.tsx
+│       └── gallery.tsx
+│
+├── src
+│   ├── components
+│   ├── constants
+│   ├── context
+│   └── types
+│
+├── assets
+├── package.json
+└── README.md
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## Technologies Used
 
-To learn more about developing your project with Expo, look at the following resources:
+### Frontend
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+* React Native
+* Expo
+* Expo Router
+* TypeScript
 
-## Join the community
+### Hardware & Sensors
 
-Join our community of developers creating universal apps.
+* Expo Camera
+* Expo Location
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### State Management
+
+* React Context API
+* React Hooks
+
+### Navigation
+
+* Expo Router
+* Tab Navigation
+
+### UI Design
+
+* React Native StyleSheet
+* React Native Safe Area Context
+
+---
+
+## Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/EdwardFBDev/GeoPic.git
+```
+
+### 2. Navigate to the Project Directory
+
+```bash
+cd GeoPic
+```
+
+### 3. Install Dependencies
+
+```bash
+npm install
+```
+
+### 4. Run the Application
+
+```bash
+npx expo start
+```
+
+---
+
+## Requirements
+
+* Node.js
+* Expo Go
+* Physical Android or iOS device
+
+> A physical device is recommended to properly test camera and GPS functionality.
+
+---
+
+## Author
+
+**Eduardo Funes Betancourt**
+
+Developed as part of the Mobile Application Development course.
